@@ -1,0 +1,34 @@
+﻿{
+  "time": {
+    "updated": "Nov 8, 2018 11:19:00 UTC"
+  },
+  "buy": {
+    "1": {
+      "payment": "Play残高",
+      "point": "+2",
+      "game": "BBBBB",
+      "item": "ITEM SET 1",
+      "company": "AAAAA社",
+      "date": "2018/11/04",
+      "amount": "120"
+    },
+    "2": {
+      "payment": "クレジット",
+      "point": "+5",
+      "game": "DDDDD",
+      "item": "特別パック",
+      "company": "CCCCC社",
+      "date": "2018/11/01",
+      "amount": "3000"
+    },
+    "3": {
+      "payment": "Play残高",
+      "point": "0",
+      "game": "GGGGG",
+      "item": "マンスリーパス",
+      "company": "FF社",
+      "date": "2018/10/28",
+      "amount": "500"
+    }
+  }
+}
