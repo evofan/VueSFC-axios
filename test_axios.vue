@@ -28,8 +28,8 @@ export default {
   filters: {
     /**
      * 3桁ごとにカンマを入れる
-     * param { number } num
-     * returns { string } 0 or ”,”で区切りされた値
+     * @param { number } num
+     * @returns { string } 0 or ”,”で区切りされた値
      */
     aligenmentNum : function(num){
       if(!num){
