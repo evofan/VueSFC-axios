@@ -1,7 +1,7 @@
-#Vue.js single file component + axios sample  
+# Vue.js single file component + axios sample  
 
 **DEMO**  
-[hhttps://evofan.github.io/VueSFC-axios/](https://evofan.github.io/VueSFC-axios/)  
+[https://evofan.github.io/VueSFC-axios/](https://evofan.github.io/VueSFC-axios/)  
 
 reference  
 
