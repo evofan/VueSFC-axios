@@ -66,7 +66,7 @@ export default {
     // テスト用JSONファイルの読み込み
     axios
       .get("sample_order.json")
-      .then(response => (this.res = response.data.buy));
+      .then(response => (this.res = response.data.photo));
   }
 };
 </script>

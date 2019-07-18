@@ -113,7 +113,7 @@
         // テスト用JSONファイルの読み込み
         axios
           .get('data/sample_order.json')
-          .then(response => (this.res = response.data.buy))
+          .then(response => (this.res = response.data.photo))
           // エラー処理
           .catch(error => console.log(error))
       },
