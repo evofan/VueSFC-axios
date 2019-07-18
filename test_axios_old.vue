@@ -1,16 +1,17 @@
 <template>
 <div id="app">
 <h2>Vue.js単一ファイルコンポーネント + axios サンプル</h2>
-<p>photoAC</p>
+<p>アイテム購入履歴</p>
 <div v-for="(key, value) in res" :key="value">
 <table>
 <tr><th colspan="2">	{{ value }}</th></tr>
-<tr><td class="td-title">タイトル：</td><td>{{ key.title }}</td></tr>
-<tr><td class="td-title">クリエイター：</td><td>{{ key.creator }}</td></tr>
-<tr><td class="td-title">ダウンロード：</td><td>{{ key.download | aligenmentNum }}}</td></tr>
-<tr><td class="td-title">ID：</td><td>{{ key.id }}</td></tr>
-<tr><td class="td-title">URL：</td><td>{{ key.url }}</td></tr>
-<tr v-if="key.point!=='0'"><td class="td-title">自サイトでの使用回数：</td><td>{{ key.use + "回" }}</td></tr>
+<tr><td class="td-title">日付：</td><td>{{ key.date }}</td></tr>
+<tr><td class="td-title">支払い方法：</td><td>{{ key.payment }}</td></tr>
+<tr><td class="td-title">購入会社：</td><td>{{ key.company }}</td></tr>
+<tr><td class="td-title">購入アイテム：</td><td>{{ key.item }}</td></tr>
+<tr><td class="td-title">購入ゲーム：</td><td>{{ key.game }}</td></tr>
+<tr><td class="td-title">購入金額：</td><td>{{ key.amount | aligenmentNum }}</td></tr>
+<tr v-if="key.point!=='0'"><td class="td-title">ポイント付与：</td><td>{{ key.point + "pt" }}</td></tr>
 </table>
 </div>
 </div>

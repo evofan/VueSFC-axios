@@ -7,7 +7,7 @@
   <script src="js/vue.min.js"></script>
   <style>
     table {
-      width: 400px;
+      width: 600px;
       margin-bottom: 30px;
     }
 
@@ -33,7 +33,9 @@
 
   <h2>Vue.js single file component + axios sample</h2>
 
-  <p>item buy history</p>
+  <p>photoAC free asset sample list<br>
+    <a href="https://www.photo-ac.com/" target="_blank">https://www.photo-ac.com/</a>
+  </p>
 
   <div id="app">
 
@@ -43,27 +45,37 @@
           <th colspan="2"> {{ value }}
             <!--{{ index }}-->
           </th>
+        </tr>
         <tr>
-          <td class="td-title">日付：</td>
-          <td>{{ key.date }}</td>
+          <th colspan="2"><img v-bind:src="'images/' + value + '.jpg'" width="320" height="240" alt="" />
+          </th>
+        </tr>
         <tr>
-          <td class="td-title">支払い方法：</td>
-          <td>{{ key.payment }}</td>
+          <td class="td-title">タイトル：</td>
+          <td>{{ key.title }}</td>
+        </tr>
         <tr>
-          <td class="td-title">購入会社：</td>
-          <td>{{ key.company }}</td>
+          <td class="td-title">クリエイター：</td>
+          <td>{{ key.creator }}</td>
+        </tr>
         <tr>
-          <td class="td-title">購入アイテム：</td>
-          <td>{{ key.item }}</td>
+          <td class="td-title">ダウンロード：</td>
+          <td>{{ key.download | aligenmentNum }}</td>
+        </tr>
         <tr>
-          <td class="td-title">購入ゲーム：</td>
-          <td>{{ key.game }}</td>
+          <td class="td-title">ID：</td>
+          <td>{{ key.id }}</td>
+        </tr>
         <tr>
-          <td class="td-title">購入金額：</td>
-          <td>{{ key.amount | aligenmentNum }}</td>
+          <td class="td-title">URL：</td>
+          <td>{{ key.url }}</td>
+        </tr>
+        <!--
         <tr v-if="key.point!=='0'">
-          <td class="td-title">ポイント付与：</td>
-          <td>{{ key.point + "pt" }}</td>
+          <td class="td-title">自サイトでの使用回数：</td>
+          <td>{{ key.use + "回" }}</td>
+        </tr>
+      -->
       </table>
     </div>
 
@@ -107,8 +119,36 @@
       },
 
     });
+    /*
+        <table>
+        <tr>
+          <th colspan="2"> {{ value }}
+            <!--{{ index }}-->
+          </th>
+        <tr>
+          <td class="td-title">日付：</td>
+          <td>{{ key.date }}</td>
+        <tr>
+          <td class="td-title">支払い方法：</td>
+          <td>{{ key.payment }}</td>
+        <tr>
+          <td class="td-title">購入会社：</td>
+          <td>{{ key.company }}</td>
+        <tr>
+          <td class="td-title">購入アイテム：</td>
+          <td>{{ key.item }}</td>
+        <tr>
+          <td class="td-title">購入ゲーム：</td>
+          <td>{{ key.game }}</td>
+        <tr>
+          <td class="td-title">購入金額：</td>
+          <td>{{ key.amount | aligenmentNum }}</td>
+        <tr v-if="key.point!=='0'">
+          <td class="td-title">ポイント付与：</td>
+          <td>{{ key.point + "pt" }}</td>
+      </table>
+      */
   </script>
-
 </body>
 
 </html>

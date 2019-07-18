@@ -1,34 +1,31 @@
 ﻿{
   "time": {
-    "updated": "Nov 8, 2018 11:19:00 UTC"
+    "updated": "Jul 19, 2019"
   },
   "buy": {
     "1": {
-      "payment": "Play残高",
-      "point": "+2",
-      "game": "BBBBB",
-      "item": "ITEM SET 1",
-      "company": "AAAAA社",
-      "date": "2018/11/04",
-      "amount": "120"
+      "title": "おしゃれカフェでコーヒータイム2",
+      "creator": "Betty（ベティ）",
+      "download": "1297",
+      "id": "306556",
+      "url": "https://www.photo-ac.com/profile/340829",
+      "use": "2"
     },
     "2": {
-      "payment": "クレジット",
-      "point": "+5",
-      "game": "DDDDD",
-      "item": "特別パック",
-      "company": "CCCCC社",
-      "date": "2018/11/01",
-      "amount": "3000"
+      "title": "緑茶03",
+      "creator": "青ペン",
+      "download": "849",
+      "id": "1007242",
+      "url": "https://www.photo-ac.com/profile/967548s",
+      "use": "1"
     },
     "3": {
-      "payment": "Play残高",
-      "point": "0",
-      "game": "GGGGG",
-      "item": "マンスリーパス",
-      "company": "FF社",
-      "date": "2018/10/28",
-      "amount": "500"
+      "title": "コーラ",
+      "creator": "あけび",
+      "download": "5",
+      "id": "490826",
+      "url": "https://www.photo-ac.com/profile/537264",
+      "use": "0"
     }
   }
 }
