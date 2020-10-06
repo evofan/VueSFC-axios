@@ -1,6 +1,9 @@
 # Vue.js single file component + axios sample  
 
 **DEMO**  
+
+<img src="https://evofan.github.io/VueSFC-axios/images/pic_vue_axios.jpg" width="50%"> 
+
 [https://evofan.github.io/VueSFC-axios/](https://evofan.github.io/VueSFC-axios/)  
 
 reference  
