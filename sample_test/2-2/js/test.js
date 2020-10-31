@@ -11,7 +11,7 @@ test.js:6 Uncaught ReferenceError: Vue is not defined
 */
 
 const app = new Vue({ // Vueのインスタンスを作成
-    el: '#app',
+    el: '#app',　// VueインスタンスをマウントするDOM要素（getElementByID等で取得したオブジェクト又はCSSのセレクタ文字列）
     data() {
         return {
             message: "こんにちは"
@@ -37,3 +37,17 @@ Vue.config.devtools = true;
 
 // ■コンポーネント
 // Vue内でインスタンスを分割、後出
+
+
+// elプロパティでなくmountメソッドでも可能
+/*
+const app = new Vue({
+    //
+});
+vm.$mount(el)
+*/
+
+// Vue.jsを既存のアプリケーションに導入する場合、同じようにDOM要素にマウントする
+// 但し、Vue.jsのテンプレート記法（@clickや:disabled等）が組み込み先によってはエラーになる可能性がある
+// ので、v-on:clickや、v-bind:disabledの様に省略しない書き方をする必要がある（v-～はHTMLの文法になるのでエラーにならない）
+

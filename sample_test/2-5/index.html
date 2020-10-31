@@ -1,0 +1,20 @@
+﻿<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.js Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ item_ary[0].name }}</p>
+      <p>{{ item_ary[0].price }}</p>
+      <p>{{ item_ary[0].quantity }}</p>
+      <p>合計は、{{ item_ary[0].price * item_ary[0].quantity }} 円</p>
+      <p>&nbsp;<br>
+        <button id="buy_button" v-bind:title="loggedInButton">購入</button>
+      </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+  </body>
+</html>
