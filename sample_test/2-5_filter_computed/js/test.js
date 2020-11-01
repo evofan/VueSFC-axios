@@ -23,11 +23,30 @@ let item_ary = [
 
 const vm = new Vue({
     el: "#app",
+
     data() {
         return {
             // キー：値
             items: item_ary,
             loggedInButton: "ログイン済みの為、購入出来ます" // マウスオーバー時に表示される
+        }
+    },
+
+    filters: {
+        NumberWithDelimiter: function (value) {
+            if (!value) { return }
+            return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,'); // 三桁毎にカンマを入れる
+        }
+    },
+
+    computed: {
+        totalPrice: function () { // ★関数を定義したが呼び出す時はプロパティで＝()無しで呼び出し
+            // this経由でインスタンス内のデータにアクセス
+            return this.items.reduce((sum, item) => { return sum + (item.price * item.quantity) }, 0);
+        },
+        totalPriceWithTax: function () {
+            // 算出プロパティに依存した算出プロパティも定義可能
+            return Math.floor(this.totalPrice * 1.10); // thisはvueインスタンス自身を差す
         }
     }
 });
@@ -85,3 +104,25 @@ vm.items[0].quantity = 10;
 // ■filters（フィルタ）
 // 汎用的なテキストfフォーマット処理を適用する仕組み
 // 日付のフォーマットをYYYY/MM/DDに変換したり、0.5を50%に変換したりするのに使う
+/*
+filters: {
+    フィルタ名: function (value) {
+        // sreturn
+    }
+}
+
+{{ 値 | フィルタ名1 | フィルタ名2（複数時） }}
+*/
+
+
+// ■算出プロパティ（computed）
+// ★データそのものに何らかの処理を与えたものをプロパティとして使用したい場合に使う＝インスタンスに持たせてプロパティとして参照したい
+// （主に、複雑な式をそのままテンプレートに入れると保守が困難になるので、その解決のために使用）
+/*
+computed: {
+    算出プロパティ名: function (value) {
+        // sreturn
+    }
+}
+*/
+
