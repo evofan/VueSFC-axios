@@ -7,7 +7,7 @@ let item_ary = [
     {
         name: "鉛筆",
         price: 300,
-        quantity: 10
+        quantity: 1
     },
     {
         name: "ノート",
@@ -50,6 +50,12 @@ const vm = new Vue({
         },
         canBuy: function () {
             return this.totalPrice >= 1000
+        },
+        errorMessageStyle: function () {
+            return {
+                border: this.canBuy ? '' : '1px solid red',
+                color: this.canBuy ? '' : 'red'
+            }
         }
     }
 });
@@ -118,4 +124,31 @@ computed :{
 
 
 // ・スタイルのバインディング（v-bind:style=""）
-// 
+// 属性値のオブジェクトの「プロパティ：値」が、CSSの「プロパティ：値」になる
+/*
+<p v-bind:style="{color: red}">a</p>
+*/
+
+// 式と組み合わせて使用可能
+/*
+<p v-bind:style="{border: {canBuy ? '' : '1px solid red'}, color: {canBuy ? '' : 'red'}}">">1000円以上からご購入頂けます。</p>
+*/
+
+// 上記のように複雑な場合、算出プロパティに移した方がよい
+/*
+computed :{
+    errorMessageStyle: function() {
+        return {
+            border: {canBuy ? '' : '1px solid red'},
+            color: {canBuy ? '' : 'red'}
+        }
+    }
+}
+<p v-bind:style="errorMessageStyle">1000円以上からご購入頂けます。</p>
+*/
+
+// v-bindの省略記法
+// v-bind:style="{color: red}" -> :style="{color: red}"
+// v-bind:class="{error: !canBuy}" -> :class="{error: !canBuy}"
+
+

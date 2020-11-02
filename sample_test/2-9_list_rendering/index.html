@@ -8,6 +8,13 @@
     <div id="app">
       <div :style="errorMessageStyle">
         <!--1000円を超えるまで赤く表示する-->
+        <ul>
+          <!--各商品の単価と購入個数をリスト表示する-->
+          <li v-for="item in items" v-bind:key="item.name">
+            {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{
+            item.price *item.quantity | NumberWithDelimiter }}円
+          </li>
+        </ul>
         <p>{{ item_ary[0].name }}</p>
         <p>{{ item_ary[0].price }}</p>
         <p>{{ item_ary[0].quantity }}</p>
