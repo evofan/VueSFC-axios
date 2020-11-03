@@ -1,0 +1,55 @@
+﻿<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.js Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in items" v-bind:key="item.name">
+          <!-- v-onディレクティブの代わりにv-modelを使う-->
+          {{ item.name }}:
+          <input
+            type="number"
+            v-model="item.quantity" 
+            min="0"
+          />
+          <!-- v-on:change="item.quantity = $event.target.value" ※リアルタイム反映でなく、フォーカスが外れた時に反映したい場合はchangeを使用、2.6だと変わらない？
+        -->
+          <!--単純な数値変更なので、Vue.jsのDOMイベントオブジェクト参照の$eventを使用-->
+        </li>
+      </ul>
+
+      <hr />
+
+      <div :style="errorMessageStyle">
+        <!--1000円を超えるまで赤く表示する-->
+        <ul>
+          <!--各商品の単価と購入個数をリスト表示する-->
+          <li v-for="item in items" v-bind:key="item.name">
+            {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{
+            item.price *item.quantity | NumberWithDelimiter }}円
+          </li>
+        </ul>
+        <p>{{ item_ary[0].name }}</p>
+        <p>{{ item_ary[0].price }}</p>
+        <p>{{ item_ary[0].quantity }}</p>
+        <p>合計は、{{ item_ary[0].price * item_ary[0].quantity }} 円</p>
+        <p>
+          &nbsp;<br />
+          <button id="buy_button" v-bind:title="loggedInButton">購入</button>
+        </p>
+        <p>フィルタ例 {{ 1000 | NumberWithDelimiter }} 円</p>
+        <p>算出プロパティ例 合計： {{ totalPrice }} 円</p>
+        <p>算出プロパティ例 合計： {{ totalPriceWithTax }} 円（税込み）</p>
+        <p v-show="!canBuy">
+          {{ 1000 | NumberWithDelimiter }} 円以上からご購入頂けます。
+        </p>
+        <!-- totalPriceが1000円以上の時にのみ表示される -->
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+  </body>
+</html>
