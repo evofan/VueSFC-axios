@@ -1,0 +1,20 @@
+﻿<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.js Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="fruits-counter">
+      <div v-for="fruit in fruits">
+        {{fruit.name}}:
+        <counter-button
+          v-on:increment="incrementCartStatus()"
+        ></counter-button>
+      </div>
+      <p>合計：{{ total }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+  </body>
+</html>
