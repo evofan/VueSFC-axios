@@ -1,0 +1,28 @@
+* {
+  font-family: Verdana, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+#wrapper {
+  margin: 9px 18px 9px 18px;
+}
+#header {
+  height: 140px;
+}
+
+.header h1 {
+  width: 100%;
+  height: 30px;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  padding: 30px 15px;
+}
+
+.content h1 {
+  width: 100px;
+  height: 30px;
+  padding: 30px 15px;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  text-align: left;
+}
