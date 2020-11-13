@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div id="fruits-list">
-      <fruits-list-title></fruits-list-title>
+    <div id="app">
+      <!--リンク先をtoプロパティに指定する-->
+      <!--デフォルトで、<routner-link>タグは<a>に変換される-->
+      <router-link to="/top">トップページ</router-link>
+      <router-link to="/users">ユーザー一覧ページ</router-link>
+      <router-view></router-view>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1"></script>
     <script type="text/javascript" src="js/test.js"></script>
   </body>
 </html>

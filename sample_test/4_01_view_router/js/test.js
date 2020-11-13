@@ -3,50 +3,30 @@
 // Vueがロードされてグローバル変数として定義されているか確認
 console.assert(typeof Vue !== 'undefined');
 
-// ■Vueインスタンス前に定義する
-Vue.component('fruits-list-title', {
-    template: "<h1>フルーツ一覧</h1>"
-});
+// ルーターの定義
+let router = new VueRouter({
+    // コンポーネントをマッピングしたルート定義を配列で返す
+    routes: [
+        {
+            path: '/top',
+            component: {
+                template: '<div>トップページです</div>'
+            }
+        },
+        {
+            path: '/users',
+            component: {
+                template: '<div>ユーザー一覧ページです</div>'
+            }
+        }
 
-Vue.component('fruits-list-descripttion', {
-    template: "<p>季節の代表的なフルーツの一覧です。</p>"
-});
-
-Vue.component('fruits-list-table', {
-    template: `
-    <table>
-        <tr>
-        <th>季節</th>
-        <th>フルーツ</th>
-        </tr>
-        <tr>
-        <td>春</td>
-        <td>いちご</td>
-        </tr>
-        <tr>
-        <td>夏</td>
-        <td>スイカ</td>
-        </tr>
-        <tr>
-        <td>秋/td>
-        <td>ぶどう</td>
-        </tr>
-        <tr>
-        <td>冬/td>
-        <td>みかん</td>
-        </tr>     
-    </table>
-    `
+    ]
 });
 
 const vm = new Vue({
-    el: "#fruits-list",
+    el: "#app",
 
-    components: {
-        'fruits-list-title': {
-            template: '<h1>フルーツ一覧</h1>'
-        }
-    },
+    router: router,
 
     data() {
         return {
@@ -90,6 +70,25 @@ Vue.config.devtools = true;
 // ・自動的にCSSクラスがアクティブになるリンクの仕組み
 // ・Vue.jsのトランジッションを使った遷移時のエフェクト
 // ・スクロールの振る舞いのカスタマイズ
+
+
+// ■ルーティングの基礎
+
+// ルーターのインストール
+// ※今回はCDNで
+
+// ルーティング設計
+// ルーティングを実装するには、ルートとコンストラクタを使う
+
+// ・ルート
+// 　→このURLの時はこのページを表示するという情報
+// 　　/goodsのアドレスなら、goodsコンポーネントを表示する等
+
+// ・コンストラクタ
+// 　→ルーターコンストラクタを用いて、ルーター初期化時にrouteオプションに設定する
+
+// HTML側
+// router-view要素にレンダリングされるので、それを埋め込む
 
 
 
