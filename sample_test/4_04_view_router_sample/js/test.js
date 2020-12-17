@@ -59,3 +59,5 @@ Vue.config.devtools = true;
 // watchは算出プロパティを汎用的にしたVueコンポーネントのオプション
 // （watchは$routeを監視して、ルートに変更がある度に処理を呼び出す）
 // ★watchによる$routeの検出は頻出するパターン
+
+// 
